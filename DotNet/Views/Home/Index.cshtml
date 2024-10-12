@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Random Data Generator";
+}
+
+<h1>Random Data Generator</h1>
+
+<div>
+    <button id="generateBtn">Generate</button>
+    <button id="resetBtn">Reset</button>
+    <button id="submitBtn" disabled>Submit</button>
+</div>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Hobby</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const GENDER = { MALE: 1, FEMALE: 2 };
+    const HOBBIES = ["Sepak Bola", "Badminton", "Tennis", "Renang", "Bersepeda", "Tidur"];
+
+    $('#generateBtn').click(function() {
+        let rows = [];
+        for (let i = 0; i < 1000; i++) {
+            let name = Math.random().toString(36).substring(2, 15);
+            let gender = Math.random() < 0.5 ? GENDER.MALE : GENDER.FEMALE;
+            let hobby = HOBBIES[Math.floor(Math.random() * HOBBIES.length)];
+            let age = Math.floor(Math.random() * 23) + 18; // Range 18-40
+            rows.push({ id: i + 1, name, gender, hobby, age });
+        }
+        populateTable(rows);
+        $('#submitBtn').prop('disabled', false);
+    });
+
+    function populateTable(rows) {
+        let tbody = $('#data-table tbody');
+        tbody.empty();
+        rows.forEach(row => {
+            tbody.append(`<tr><td>${row.id}</td><td>${row.name}</td><td>${row.gender}</td><td>${row.hobby}</td><td>${row.age}</td></tr>`);
+        });
+    }
+
+    $('#submitBtn').click(function() {
+        let data = [];
+        $('#data-table tbody tr').each(function() {
+            let cols = $(this).children('td');
+            data.push({
+                Id: parseInt(cols[0].innerText),
+                Name: cols[1].innerText,
+                GenderId: parseInt(cols[2].innerText),
+                Hobby: cols[3].innerText,
+                Age: parseInt(cols[4].innerText)
+            });
+        });
+        $.ajax({
+            url: '/Home/SubmitData',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function(response) {
+                alert('Data submitted successfully!');
+            },
+            error: function(err) {
+                alert('Error: ' + err.responseText);
+            }
+        });
+    });
+</script>

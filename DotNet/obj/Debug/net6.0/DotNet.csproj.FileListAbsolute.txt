@@ -1,0 +1,8 @@
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.csproj.AssemblyReference.cache
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.AssemblyInfoInputs.cache
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.AssemblyInfo.cs
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.csproj.CoreCompileInputs.cache
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.MvcApplicationPartsAssemblyInfo.cache
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.RazorAssemblyInfo.cache
+/Users/apple/Documents/PHASE 03/TesKerja/PT-ADAYA-solusi-teknologi/DotNet/obj/Debug/net6.0/DotNet.RazorAssemblyInfo.cs
